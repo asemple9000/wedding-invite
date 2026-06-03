@@ -74,6 +74,23 @@
     display: inline-block;
     animation: throb 1.4s ease-in-out infinite;
 }
+        .confetti {
+    position: fixed;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    opacity: 0.9;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 2.5s linear forwards;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+}
+
 
     </style>
 </head>
@@ -152,6 +169,35 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
     </script>
+<script>
+function launchConfetti() {
+    const confettiCount = 60; // number of pieces
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        // random horizontal position
+        confetti.style.left = Math.random() * 100 + "vw";
+
+        // random size
+        const size = Math.random() * 6 + 4;
+        confetti.style.width = size + "px";
+        confetti.style.height = size + "px";
+
+        // random delay so they don't all fall at once
+        confetti.style.animationDelay = Math.random() * 1 + "s";
+
+        document.body.appendChild(confetti);
+
+        // remove after animation
+        setTimeout(() => confetti.remove(), 3000);
+    }
+}
+
+// trigger once when page loads
+window.onload = launchConfetti;
+</script>
 
 </body>
 </html>
