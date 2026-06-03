@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Andy & Kerry – Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f8f3ff;
+            font-family: "Georgia", serif;
+            color: #4a4a4a;
+            text-align: center;
+        }
+
+        .card {
+            max-width: 650px;
+            margin: 30px auto 40px auto;
+            background: #ffffff;
+            padding: 40px 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: #c27ba0;
+            margin: 20px auto;
+            border-radius: 999px;
+        }
+
+        .script {
+            font-family: "Brush Script MT", cursive;
+            font-size: 2.2rem;
+            color: #c27ba0;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 2.6rem;
+            margin: 0 0 10px 0;
+            color: #8b5e3c;
+        }
+
+        .details {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        #countdown {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-top: 10px;
+        }
+
+        /* Optional floral header image styling */
+        .floral-header {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- If you have an image called floral-header.png in the same folder, it will show here -->
+        <img src="floral-header.png" alt="Floral decoration" class="floral-header">
+
+        <div class="script">You are invited to</div>
+        <h1>Andy & Kerry’s Wedding</h1>
+
+        <div class="divider"></div>
+
+        <p class="details">
+            Join us for a joyful celebration filled with love, laughter,<br>
+            and a little bit of fun as we say “I do”.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="details">
+            <strong>Date:</strong> Thursday 15th April 2027<br>
+            <strong>Time:</strong> 2:30 PM<br>
+            <strong>Location:</strong> Bury Registry Office
+        </p>
+
+        <div class="divider"></div>
+
+        <h2 style="color:#8b5e3c; font-family:'Playfair Display', serif; margin-bottom:5px;">
+            Countdown to Our Day
+        </h2>
+
+        <div id="countdown">Loading...</div>
+
+        <div class="divider"></div>
+
+        <p class="details">
+            We can’t wait to celebrate with you.
+        </p>
+    </div>
+
+    <script>
+        const weddingDate = new Date("April 15, 2027 14:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "Today is the day!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
