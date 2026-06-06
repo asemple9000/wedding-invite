@@ -47,6 +47,25 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.22);
 }
 
+.cant-btn {
+    display: inline-block;
+    background: #c27ba0; /* soft rose to complement the mint */
+    color: white;
+    padding: 12px 26px;
+    font-size: 1.1rem;
+    font-family: "Playfair Display", serif;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease;
+    animation: throb 1.8s ease-in-out infinite; /* gentle pulse */
+    margin-top: 12px;
+}
+
+.cant-btn:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+}
 
 
         .divider {
@@ -174,7 +193,10 @@
    class="rsvp-btn">
     RSVP by Text
 </a>
-
+<a href="sms:07553104215?&body=Hi%20Andy%20and%20Kerry,%20sorry%20I%20can’t%20make%20it."
+   class="cant-btn">
+    Can’t Make It
+</a>
 
     </div>
 
