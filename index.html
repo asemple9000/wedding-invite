@@ -22,7 +22,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border-radius: 16px;
         }
-        .rsvp-btn {
+.rsvp-btn {
     display: inline-block;
     background: #a3d1a3;
     color: white;
@@ -33,13 +33,14 @@
     text-decoration: none;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease;
+    animation: throb 1.8s ease-in-out infinite; /* gentle pulse */
 }
 
 .rsvp-btn:hover {
-    transform: scale(1.06);
     box-shadow: 0 6px 16px rgba(0,0,0,0.22);
 }
+
 
 
         .divider {
@@ -163,10 +164,11 @@
 <p class="details" style="color:#a3d1a3; font-weight:bold;">
     RSVP as soon as possible, and we will send more details about the day
 </p>
-        <a href="sms:07553104215?&body=Hi%20Andy%20and%20Kerry,%20I%20would%20like%20to%20RSVP!"
+<a href="sms:07553104215?&body=Hi%20Andy%20and%20Kerry,%20I%20would%20like%20to%20RSVP!"
    class="rsvp-btn">
     RSVP by Text
 </a>
+
 
     </div>
 
